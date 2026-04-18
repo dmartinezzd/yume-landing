@@ -101,6 +101,18 @@ body {
     text-align: center;
 }
 
+.content a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.content a:hover {
+    color: #52D4F5;
+}
+
+
 @media (max-width: 600px) {
     .content {
         padding: 40px 32px;

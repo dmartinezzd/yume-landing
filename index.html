@@ -2,20 +2,40 @@
 <html lang="en">
 
 <head>
-    <meta name="description" content="Official website of the visual novel Yume no Office">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yume No Office — Romantic Visual Novel</title>
+    <meta name="description" content="A romantic comedy visual novel where you reconnect with your childhood friend and meet five very different coworkers. Available on Steam and Itch.io.">
+    <meta name="keywords" content="yume no office, visual novel, romantic comedy, steam, itch.io, indie game, outsider comet studios">
+    <meta name="author" content="Outsider Comet Studios">
+    <link rel="canonical" href="https://dmartinezzd.github.io/">
+
+    <meta property="og:type"        content="website">
+    <meta property="og:url"         content="https://dmartinezzd.github.io/">
+    <meta property="og:title"       content="Yume No Office — Romantic Visual Novel">
+    <meta property="og:description" content="A romantic comedy visual novel where you reconnect with your childhood friend and meet five very different coworkers.">
+    <meta property="og:image"       content="https://dmartinezzd.github.io/assets/header.jpg">
+    <meta property="og:image:width"  content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale"      content="en_US">
+    <meta property="og:site_name"   content="Yume No Office">
+
+    <meta name="twitter:card"        content="summary_large_image">
+    <meta name="twitter:site"        content="@k_bayashi01">
+    <meta name="twitter:creator"     content="@k_bayashi01">
+    <meta name="twitter:title"       content="Yume No Office — Romantic Visual Novel">
+    <meta name="twitter:description" content="A romantic comedy visual novel where you reconnect with your childhood friend and meet five very different coworkers.">
+    <meta name="twitter:image"       content="https://dmartinezzd.github.io/assets/header.jpg">
+
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon"      href="assets/favicon.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/index.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-
-    <title>Yume No Office</title>
-
 </head>
 
 <body>
@@ -52,8 +72,9 @@
             </div>
 
             <div class="buttons">
-                <button>Press Kit</button>
-                <button>Newsletter</button>
+                <button onclick="document.getElementById('trailer').scrollIntoView({ behavior: 'smooth' })">Trailer</button>
+                <button>PressKit</button>
+                <button onclick="document.getElementById('social').scrollIntoView({ behavior: 'smooth' })">Social</button>
             </div>
         </div>
 
@@ -65,7 +86,7 @@
         <p>Chapters 2 and 3 are in <a href="https://store.steampowered.com/news/app/2978070/view/491593545667314475">development</a>.</p>
     </section>
 
-    <section class="trailer">
+    <section class="trailer" id="trailer">
         <iframe 
             src="https://www.youtube.com/embed/EYaf1ZBaoj4?si=hCDthdDMbEl1zIjl"
             title="YouTube video player"
@@ -78,7 +99,7 @@
 
     <section class="content">
         <h2>Five girls, a new beginning... and emotions that perhaps should never have coincided.</h2>
-        <p>Yume no Office is a romantic comedy with touches of drama where, after losing your job, you reconnect with your childhood friend and begin a new chapter at her company. Between work and everyday life, you'll meet four very different colleagues, each approaching you in a unique way. As the bonds strengthen, you'll discover that not all connections are easy to break. You can delve deeper into each story, follow different paths... or see what happens when none of them stop.</p>
+        <p>Yume no Office is a <b>romantic comedy</b> with <b>touches of drama</b> where, after losing your job, <b>you reconnect with your childhood friend</b> and begin a new chapter at her company. Between work and everyday life, <b>you'll meet four very different colleagues</b>, each approaching you in a unique way. As the bonds strengthen, you'll discover that not all connections are easy to break. You can delve deeper into each story, follow different paths... <b>or see what happens when none of them stop.</b></p>
     </section>
 
 <section class="gallery">
@@ -124,7 +145,7 @@
             <img src="assets/miko.png" alt="Screenshot 4">
             <div class="gallery-item-text">
                 <div>
-                    <h3>Título aquí</h3>
+                    <h3>Each one with a random mood per day.</h3>
                 </div>
             </div>
         </div>
@@ -133,7 +154,7 @@
             <img src="assets/tsukasa.png" alt="Screenshot 5">
             <div class="gallery-item-text">
                 <div>
-                    <h3>Título aquí</h3>
+                    <h3>Spend time with them at special events and holidays.</h3>
                 </div>
             </div>
         </div>
@@ -142,7 +163,7 @@
             <img src="assets/rin.png" alt="Screenshot 6">
             <div class="gallery-item-text">
                 <div>
-                    <h3>Título aquí</h3>
+                    <h3>With an affinity system that allows you to progress through various events.</h3>
                 </div>
             </div>
         </div>
@@ -151,7 +172,7 @@
             <img src="assets/phone.png" alt="Screenshot 6">
             <div class="gallery-item-text">
                 <div>
-                    <h3>Título aquí</h3>
+                    <h3>And top-notch art.</h3>
                 </div>
             </div>
         </div>
@@ -177,12 +198,13 @@
             <p>The group within the studio with talents from all over Latin America, from Mexico, El Salvador, Colombia, Chile and Argentina.</p>
         </div>
 
-        <div class="footer-col">
+        <div class="footer-col" id="social">
             <h4>Follow us</h4>
             <div class="social-links">
-                <a href="#">Twitter</a>
-                <a href="#">Instagram</a>
-                <a href="#">TikTok</a>
+                <a href="https://x.com/k_bayashi01">Twitter</a>
+                <a href="https://www.instagram.com/k_bayashi02/">Instagram</a>
+                <a href="https://www.tiktok.com/@k_bayashi0">TikTok</a>
+                <a href="https://www.youtube.com/@k_bayashi0">Youtube</a>
             </div>
         </div>
     </div>
