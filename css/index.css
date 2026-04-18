@@ -9,7 +9,7 @@ body {
     position: relative;
     height: 100vh;
 
-    background-image: url("../assets/header.jpg");
+    background-image: url("../assets/header.webp");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -50,7 +50,7 @@ body {
     transform: translate(-50%, -50%);
     z-index: 2;
 
-    background-image: url("../assets/logo.png");
+    background-image: url("../assets/logo.webp");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
