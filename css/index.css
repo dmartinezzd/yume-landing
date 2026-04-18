@@ -101,6 +101,12 @@ body {
     text-align: center;
 }
 
+@media (max-width: 600px) {
+    .content {
+        padding: 40px 32px;
+    }
+}
+
 .platform a {
     color: white;
     text-decoration: none;
@@ -329,4 +335,38 @@ footer {
         gap: 40px;
         text-align: center;
     }
+}
+
+.content_yume {
+    background: black;
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+
+    display: flex;
+    align-items: center;       
+    justify-content: center;
+}
+
+.content_yume h2 {
+    font-family: "Lexend", sans-serif;
+    font-size: 28px;
+    color: white;
+    position: relative;
+    z-index: 10;               
+    display: inline-block;
+    text-shadow: 0 0 20px rgba(255,255,255,0.8),
+                 0 0 40px rgba(255,255,255,0.4); 
+}
+
+.glitch-word {
+    position: absolute;
+    font-family: "Lexend", sans-serif;
+    font-weight: 700;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    z-index: 1;             
 }
