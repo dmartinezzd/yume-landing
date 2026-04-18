@@ -21,6 +21,12 @@ body {
     overflow: hidden;
 }
 
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll; 
+    }
+}
+
 .overlay {
     position: absolute;
     inset: 0;
