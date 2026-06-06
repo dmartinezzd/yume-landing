@@ -36,9 +36,48 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/index.css">
+
+    <style>
+        /* Language switcher button */
+        .lang-switcher {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 999px;
+            padding: 6px 14px;
+            cursor: pointer;
+            font-family: 'Lexend', sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            color: white;
+            letter-spacing: 0.05em;
+            backdrop-filter: blur(8px);
+            transition: background 0.2s, border-color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .lang-switcher:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        .lang-switcher .flag {
+            font-size: 16px;
+            line-height: 1;
+        }
+    </style>
 </head>
 
 <body>
+
+    <!-- ── Language switcher ── -->
+    <button class="lang-switcher" id="langBtn" onclick="toggleLang()" aria-label="Switch language">
+        <span class="flag" id="langFlag">🌐</span>
+        <span id="langLabel">EN</span>
+    </button>
 
     <section class="hero">
         <div class="overlay"></div>
@@ -46,10 +85,9 @@
         <div class="hero-content">
             <div class="logoImg"></div>
 
-            <p class="subtitle">BUY NOW ON</p>
+            <p class="subtitle" data-en="BUY NOW ON" data-es="CÓMPRALO EN">BUY NOW ON</p>
 
             <div class="platforms">
-
                 <div class="platform">
                     <a href="https://store.steampowered.com/app/2978070/Yume_No_Office/">
                         <img src="assets/steam.svg" class="icon">
@@ -66,17 +104,18 @@
                     <a href="https://outsidercomet.itch.io/yumekawaii">
                         <span>ITCH IO</span>
                     </a>
-                    
                 </div>
-
             </div>
 
             <div class="buttons">
-                <button onclick="document.getElementById('trailer').scrollIntoView({ behavior: 'smooth' })">Trailer</button>
-                <button onclick="window.open('https://mega.nz/folder/za5EDZBS#ymnXvbpSV9Ir7dosBtcJGA', '_blank')">PressKit</button>
-                <button onclick="document.getElementById('social').scrollIntoView({ behavior: 'smooth' })">Social</button>
-                <button onclick="window.open('https://mega.nz/folder/za5EDZBS#ymnXvbpSV9Ir7dosBtcJGA', '_blank')">PressKit</button>
-                <button onclick="window.location.href='mailto:contact@outsidercometstudios.com';">Contact Us</button>
+                <button onclick="document.getElementById('trailer').scrollIntoView({ behavior: 'smooth' })"
+                    data-en="Trailer" data-es="Tráiler">Trailer</button>
+                <button onclick="document.getElementById('social').scrollIntoView({ behavior: 'smooth' })"
+                    data-en="Social" data-es="Redes">Social</button>
+                <button onclick="window.open('https://mega.nz/folder/za5EDZBS#ymnXvbpSV9Ir7dosBtcJGA', '_blank')"
+                    data-en="PressKit" data-es="PressKit">PressKit</button>
+                <button onclick="window.location.href='mailto:contact@outsidercometstudios.com';"
+                    data-en="Contact Us" data-es="Contáctanos">Contact Us</button>
             </div>
         </div>
 
@@ -84,13 +123,14 @@
     </section>
 
     <section class="content">
-        <h1>Buy Chapter 1</h1>
-        <p>Chapters 2 and 3 are in <a href="https://store.steampowered.com/news/app/2978070/view/491593545667314475">development</a>.</p>
+        <h1 data-en="Buy Chapter 1" data-es="Compra el Capítulo 1">Buy Chapter 1</h1>
+        <p data-en="Chapters 2 and 3 premiere on June 25"
+           data-es="Los capítulos 2 y 3 se estrenan el 25 de junio">Chapters 2 and 3 premiere on June 25</p>
     </section>
 
     <section class="trailer" id="trailer">
-        <iframe 
-            src="https://www.youtube.com/embed/EYaf1ZBaoj4?si=hCDthdDMbEl1zIjl"
+        <iframe
+            src="https://www.youtube.com/watch?v=8kZWjiL5f00"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -100,209 +140,293 @@
     </section>
 
     <section class="content">
-        <h2>Five girls, a new beginning... and emotions that perhaps should never have coincided.</h2>
-        <p>Yume no Office is a <b>romantic comedy</b> with <b>touches of drama</b> where, after losing your job, <b>you reconnect with your childhood friend</b> and begin a new chapter at her company. Between work and everyday life, <b>you'll meet four very different colleagues</b>, each approaching you in a unique way. As the bonds strengthen, you'll discover that not all connections are easy to break. You can delve deeper into each story, follow different paths... <b>or see what happens when none of them stop.</b></p>
+        <h2 data-en="Five girls, a new beginning... and emotions that perhaps should never have coincided."
+            data-es="Cinco chicas, un nuevo comienzo... y emociones que quizás nunca debieron coincidir.">
+            Five girls, a new beginning... and emotions that perhaps should never have coincided.
+        </h2>
+        <p data-en="Yume no Office is a <b>romantic comedy</b> with <b>touches of drama</b> where, after losing your job, <b>you reconnect with your childhood friend</b> and begin a new chapter at her company. Between work and everyday life, <b>you'll meet four very different colleagues</b>, each approaching you in a unique way. As the bonds strengthen, you'll discover that not all connections are easy to break. You can delve deeper into each story, follow different paths... <b>or see what happens when none of them stop.</b>"
+           data-es="Yume no Office es una <b>comedia romántica</b> con <b>toques de drama</b> donde, tras perder tu trabajo, <b>te reencuentras con tu amiga de la infancia</b> y comienzas un nuevo capítulo en su empresa. Entre el trabajo y la vida cotidiana, <b>conocerás a cuatro compañeras muy diferentes</b>, cada una acercándose a ti de una manera única. A medida que los vínculos se fortalecen, descubrirás que no todas las conexiones son fáciles de romper. Puedes profundizar en cada historia, seguir diferentes caminos... <b>o ver qué pasa cuando ninguna se detiene.</b>">
+            Yume no Office is a <b>romantic comedy</b> with <b>touches of drama</b> where, after losing your job, <b>you reconnect with your childhood friend</b> and begin a new chapter at her company. Between work and everyday life, <b>you'll meet four very different colleagues</b>, each approaching you in a unique way. As the bonds strengthen, you'll discover that not all connections are easy to break. You can delve deeper into each story, follow different paths... <b>or see what happens when none of them stop.</b>
+        </p>
     </section>
 
-<section class="gallery">
-    <div class="gallery-grid">
+    <section class="gallery">
+        <div class="gallery-grid">
 
-        <div class="gallery-item">
-            <img src="assets/videocall.webp" alt="Screenshot 1">
-            <div class="gallery-item-text">
-                <div>
-                    <h3>Meet your 5 cute coworkers.</h3>
+            <div class="gallery-item">
+                <img src="assets/videocall.webp" alt="Screenshot 1">
+                <div class="gallery-item-text">
+                    <div>
+                        <h3 data-en="Meet your 5 cute coworkers."
+                            data-es="Conoce a tus 5 adorables compañeras de trabajo.">Meet your 5 cute coworkers.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/pong.webp" alt="Screenshot 2">
+                <div class="gallery-item-text">
+                    <div>
+                        <h3 data-en="Play pong and bet your work bonus."
+                            data-es="Juega pong y apuesta tu bono de trabajo.">Play pong and bet your work bonus.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/kaori.webp" alt="Screenshot 3">
+                <div class="gallery-item-text">
+                    <div>
+                        <h3 data-en="Enjoy a story about love and reunion."
+                            data-es="Disfruta una historia sobre amor y reencuentro.">Enjoy a story about love and reunion.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/erika.webp" alt="Screenshot 3">
+                <div class="gallery-item-text">
+                    <div>
+                        <h3 data-en="Fall in love with their curious personalities."
+                            data-es="Enamórate de sus curiosas personalidades.">Fall in love with their curious personalities.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/miko.webp" alt="Screenshot 4">
+                <div class="gallery-item-text">
+                    <div>
+                        <h3 data-en="Each one with a random mood per day."
+                            data-es="Cada una con un humor aleatorio por día.">Each one with a random mood per day.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/tsukasa.webp" alt="Screenshot 5">
+                <div class="gallery-item-text">
+                    <div>
+                        <h3 data-en="Spend time with them at special events and holidays."
+                            data-es="Pasa tiempo con ellas en eventos especiales y días festivos.">Spend time with them at special events and holidays.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/rin.webp" alt="Screenshot 6">
+                <div class="gallery-item-text">
+                    <div>
+                        <h3 data-en="With an affinity system that allows you to progress through various events."
+                            data-es="Con un sistema de afinidad que te permite avanzar en distintos eventos.">With an affinity system that allows you to progress through various events.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="assets/phone.webp" alt="Screenshot 6">
+                <div class="gallery-item-text">
+                    <div>
+                        <h3 data-en="And top-notch art."
+                            data-es="Y arte de primera calidad.">And top-notch art.</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="content_yume">
+        <h2 data-text="I'll be waiting for you... Guinea pig..."
+            data-en="I'll be waiting for you... Guinea pig..."
+            data-es="Te estaré esperando... Conejillo de indias...">I'll be waiting for you... Guinea pig...</h2>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <div class="footer-col">
+                <h4 data-en="Published by Outsider Comet Studios"
+                    data-es="Publicado por Outsider Comet Studios">Published by Outsider Comet Studios</h4>
+                <p data-en="A studio founded in El Salvador with co-founders from Colombia and Argentina."
+                   data-es="Un estudio fundado en El Salvador con cofundadores de Colombia y Argentina.">
+                    A studio founded in El Salvador with co-founders from Colombia and Argentina.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4 data-en="Developed by Team Yume"
+                    data-es="Desarrollado por Team Yume">Developed by Team Yume</h4>
+                <p data-en="The group within the studio with talents from all over Latin America, from Mexico, El Salvador, Colombia, Venezuela, Chile and Argentina."
+                   data-es="El grupo dentro del estudio con talentos de toda Latinoamérica: México, El Salvador, Colombia, Venezuela, Chile y Argentina.">
+                    The group within the studio with talents from all over Latin America, from Mexico, El Salvador, Colombia, Venezuela, Chile and Argentina.</p>
+            </div>
+
+            <div class="footer-col" id="social">
+                <h4 data-en="Follow us" data-es="Síguenos">Follow us</h4>
+                <div class="social-links">
+                    <a href="https://x.com/k_bayashi01">Twitter</a>
+                    <a href="https://www.instagram.com/k_bayashi02/">Instagram</a>
+                    <a href="https://www.tiktok.com/@k_bayashi0">TikTok</a>
+                    <a href="https://www.youtube.com/@k_bayashi0">Youtube</a>
                 </div>
             </div>
         </div>
 
-        <div class="gallery-item">
-            <img src="assets/pong.webp" alt="Screenshot 2">
-            <div class="gallery-item-text">
-                <div>
-                    <h3>Play pong and bet your work bonus.</h3>
-                </div>
-            </div>
+        <div class="footer-bottom">
+            <p data-en="© 2026 Outsider Comet Studios. All rights reserved."
+               data-es="© 2026 Outsider Comet Studios. Todos los derechos reservados.">
+                © 2026 Outsider Comet Studios. All rights reserved.</p>
         </div>
+    </footer>
 
-        <div class="gallery-item">
-            <img src="assets/kaori.webp" alt="Screenshot 3">
-            <div class="gallery-item-text">
-                <div>
-                    <h3>Enjoy a story about love and reunion.</h3>
-                </div>
-            </div>
-        </div>
+    <script>
+        /* ── GLITCH SECTION ── */
+        const section = document.querySelector('.content_yume');
 
-        <div class="gallery-item">
-            <img src="assets/erika.webp" alt="Screenshot 3">
-            <div class="gallery-item-text">
-                <div>
-                    <h3>Fall in love with their curious personalities.</h3>
-                </div>
-            </div>
-        </div>
+        const words = {
+            en: ["ERROR", "WARNING", "CRITICAL", "DIVERGENCE", "DATA LAYER 5", "RESET ALERT", "SYSTEM FAIL", "???", "DANGER", "ALERT", "ERROR"],
+            es: ["ERROR", "ADVERTENCIA", "CRÍTICO", "DIVERGENCIA", "CAPA DE DATOS 5", "ALERTA DE REINICIO", "FALLO DEL SISTEMA", "???", "PELIGRO", "ALERTA", "ERROR"]
+        };
 
-        <div class="gallery-item">
-            <img src="assets/miko.webp" alt="Screenshot 4">
-            <div class="gallery-item-text">
-                <div>
-                    <h3>Each one with a random mood per day.</h3>
-                </div>
-            </div>
-        </div>
+        function spawnWord() {
+            const lang = document.documentElement.lang || 'en';
+            const list = words[lang] || words.en;
+            const el = document.createElement('span');
+            el.classList.add('glitch-word');
+            el.textContent = list[Math.floor(Math.random() * list.length)];
 
-        <div class="gallery-item">
-            <img src="assets/tsukasa.webp" alt="Screenshot 5">
-            <div class="gallery-item-text">
-                <div>
-                    <h3>Spend time with them at special events and holidays.</h3>
-                </div>
-            </div>
-        </div>
+            const size = Math.random() * 40 + 12;
+            el.style.fontSize  = size + 'px';
+            el.style.left      = Math.random() * 90 + '%';
+            el.style.top       = Math.random() * 80 + '%';
+            el.style.opacity   = Math.random() * 0.7 + 0.3;
+            el.style.transform = `rotate(${Math.random() * 20 - 10}deg)`;
 
-        <div class="gallery-item">
-            <img src="assets/rin.webp" alt="Screenshot 6">
-            <div class="gallery-item-text">
-                <div>
-                    <h3>With an affinity system that allows you to progress through various events.</h3>
-                </div>
-            </div>
-        </div>
+            section.appendChild(el);
 
-        <div class="gallery-item">
-            <img src="assets/phone.webp" alt="Screenshot 6">
-            <div class="gallery-item-text">
-                <div>
-                    <h3>And top-notch art.</h3>
-                </div>
-            </div>
-        </div>
+            const duration = Math.random() * 1200 + 200;
+            setTimeout(() => el.remove(), duration);
+        }
 
+        function scheduleSpawn() {
+            const aggressive = Math.random() > 0.6;
+            const count = aggressive ? Math.floor(Math.random() * 6 + 4) : 1;
+            const interval = aggressive ? 80 : Math.random() * 600 + 200;
 
-    </div>
-</section>
+            let i = 0;
+            const burst = setInterval(() => {
+                spawnWord();
+                if (++i >= count) {
+                    clearInterval(burst);
+                    setTimeout(scheduleSpawn, Math.random() * 2000 + 300);
+                }
+            }, interval);
+        }
 
-
-<section class="content_yume">
-    <h2 data-text="I'll be waiting for you... Guinea pig...">I'll be waiting for you... Guinea pig...</h2>
-</section>
-
-<footer>
-    <div class="footer-links">
-        <div class="footer-col">
-            <h4>Published by Outsider Comet Studios</h4>
-            <p>A studio founded in El Salvador with co-founders from Colombia and Argentina.</p>
-        </div>
-
-        <div class="footer-col">
-            <h4>Developed by Team Yume</h4>
-            <p>The group within the studio with talents from all over Latin America, from Mexico, El Salvador, Colombia, Chile and Argentina.</p>
-        </div>
-
-        <div class="footer-col" id="social">
-            <h4>Follow us</h4>
-            <div class="social-links">
-                <a href="https://x.com/k_bayashi01">Twitter</a>
-                <a href="https://www.instagram.com/k_bayashi02/">Instagram</a>
-                <a href="https://www.tiktok.com/@k_bayashi0">TikTok</a>
-                <a href="https://www.youtube.com/@k_bayashi0">Youtube</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <p>© 2026 Outsider Comet Studios. All rights reserved.</p>
-    </div>
-</footer>
-
-<script>
-    const section = document.querySelector('.content_yume');
-
-    const words = [
-        "ERROR", "WARNING", "CRITICAL", "DIVERGENCE",
-        "DATA LAYER 5", "RESET ALERT", "SYSTEM FAIL", "???",
-        "DANGER", "ALERT", "ERROR"
-    ];
-
-    const colors = ["#ff0000", "#ff00cc", "#52D4F5", "white", "#ff4444"];
-
-    function spawnWord() {
-        const el = document.createElement('span');
-        el.classList.add('glitch-word');
-        el.textContent = words[Math.floor(Math.random() * words.length)];
-
-        const size = Math.random() * 40 + 12;
-        el.style.fontSize  = size + 'px';
-        el.style.left      = Math.random() * 90 + '%';
-        el.style.top       = Math.random() * 80 + '%';
-        el.style.opacity   = Math.random() * 0.7 + 0.3;
-        el.style.transform = `rotate(${Math.random() * 20 - 10}deg)`;
-
-        section.appendChild(el);
-
-        const duration = Math.random() * 1200 + 200;
-        setTimeout(() => el.remove(), duration);
-    }
-
-    function scheduleSpawn() {
-        const aggressive = Math.random() > 0.6;
-        const count = aggressive ? Math.floor(Math.random() * 6 + 4) : 1;
-        const interval = aggressive ? 80 : Math.random() * 600 + 200;
-
-        let i = 0;
-        const burst = setInterval(() => {
-            spawnWord();
-            if (++i >= count) {
-                clearInterval(burst);
-                setTimeout(scheduleSpawn, Math.random() * 2000 + 300);
-            }
-        }, interval);
-    }
-
-    scheduleSpawn();
+        scheduleSpawn();
 
         function flashSection() {
-        const aggressive = Math.random() > 0.7;
+            const aggressive = Math.random() > 0.7;
+            const h2 = section.querySelector('h2');
 
-        if (aggressive) {
-            const flashes = Math.floor(Math.random() * 4 + 2);
-            let i = 0;
-            const interval = setInterval(() => {
-                if (i % 2 === 0) {
-                    section.style.background = 'white';
-                    section.querySelector('h2').style.color = 'black';
-                    section.querySelector('h2').style.textShadow = '0 0 20px rgba(0,0,0,0.8)';
-                } else {
+            if (aggressive) {
+                const flashes = Math.floor(Math.random() * 4 + 2);
+                let i = 0;
+                const interval = setInterval(() => {
+                    if (i % 2 === 0) {
+                        section.style.background = 'white';
+                        h2.style.color = 'black';
+                        h2.style.textShadow = '0 0 20px rgba(0,0,0,0.8)';
+                    } else {
+                        section.style.background = 'black';
+                        h2.style.color = 'white';
+                        h2.style.textShadow = '0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.4)';
+                    }
+                    i++;
+                    if (i >= flashes * 2) {
+                        clearInterval(interval);
+                        section.style.background = 'black';
+                        h2.style.color = 'white';
+                        h2.style.textShadow = '0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.4)';
+                        setTimeout(flashSection, Math.random() * 6000 + 3000);
+                    }
+                }, 80);
+            } else {
+                section.style.background = 'white';
+                h2.style.color = 'black';
+                h2.style.textShadow = 'none';
+                setTimeout(() => {
                     section.style.background = 'black';
-                    section.querySelector('h2').style.color = 'white';
-                    section.querySelector('h2').style.textShadow = '0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.4)';
-                }
-                i++;
-                if (i >= flashes * 2) {
-                    clearInterval(interval);
-                    section.style.background = 'black';
-                    section.querySelector('h2').style.color = 'white';
-                    section.querySelector('h2').style.textShadow = '0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.4)';
+                    h2.style.color = 'white';
+                    h2.style.textShadow = '0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.4)';
                     setTimeout(flashSection, Math.random() * 6000 + 3000);
-                }
-            }, 80);
-        } else {
-            section.style.background = 'white';
-            section.querySelector('h2').style.color = 'black';
-            section.querySelector('h2').style.textShadow = 'none';
-            setTimeout(() => {
-                section.style.background = 'black';
-                section.querySelector('h2').style.color = 'white';
-                section.querySelector('h2').style.textShadow = '0 0 20px rgba(255,255,255,0.8), 0 0 40px rgba(255,255,255,0.4)';
-                setTimeout(flashSection, Math.random() * 6000 + 3000);
-            }, Math.random() * 300 + 100);
+                }, Math.random() * 300 + 100);
+            }
         }
-    }
 
-    setTimeout(flashSection, Math.random() * 4000 + 2000);
+        setTimeout(flashSection, Math.random() * 4000 + 2000);
 
-</script>
+
+        /* ══════════════════════════════════════
+           LANGUAGE DETECTION & SWITCHING
+        ══════════════════════════════════════ */
+
+        const STORAGE_KEY = 'yno_lang';
+
+        /* Detect preferred language:
+           1. User's saved choice (localStorage)
+           2. Browser language (navigator.language)
+           3. Default → English */
+        function detectLang() {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (saved === 'es' || saved === 'en') return saved;
+
+            const browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+            return browserLang.startsWith('es') ? 'es' : 'en';
+        }
+
+        let currentLang = detectLang();
+
+        /* Apply language to every element that has data-en / data-es */
+        function applyLang(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            localStorage.setItem(STORAGE_KEY, lang);
+
+            /* Update all translatable elements */
+            document.querySelectorAll('[data-en][data-es]').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (text !== null) el.innerHTML = text;
+            });
+
+            /* Update the glitch h2 data-text attribute (used by CSS) */
+            const glitchH2 = section.querySelector('h2');
+            if (glitchH2) {
+                const attr = lang === 'es'
+                    ? 'Te estaré esperando... Conejillo de indias...'
+                    : "I'll be waiting for you... Guinea pig...";
+                glitchH2.setAttribute('data-text', attr);
+            }
+
+            /* Update switcher button */
+            const flag = document.getElementById('langFlag');
+            const label = document.getElementById('langLabel');
+            if (lang === 'es') {
+                flag.textContent  = '🇪🇸';
+                label.textContent = 'ES';
+            } else {
+                flag.textContent  = '🇺🇸';
+                label.textContent = 'EN';
+            }
+        }
+
+        /* Toggle between ES ↔ EN */
+        function toggleLang() {
+            applyLang(currentLang === 'es' ? 'en' : 'es');
+        }
+
+        /* Run on page load */
+        applyLang(currentLang);
+    </script>
 
 </body>
 </html>
