@@ -124,11 +124,13 @@
 
     <section class="content">
         <h1 data-en="Buy Chapter 1" data-es="Compra el Capítulo 1">Buy Chapter 1</h1>
-        <p data-en="Chapters 2 and 3 premiere on June 25"
-           data-es="Los capítulos 2 y 3 se estrenan el 25 de junio">Chapters 2 and 3 premiere on June 25</p>
+        <p data-en="Chapters 2 and 3 premiere on July 2"
+           data-es="Los capítulos 2 y 3 se estrenan el 2 de julio">Chapters 2 and 3 premiere on June 25</p>
     </section>
 
     <section class="trailer" id="trailer">
+        <div class="trailer-label">
+        </div>
         <iframe
             src="https://www.youtube.com/embed/8kZWjiL5f00"
             title="YouTube video player"
@@ -416,6 +418,16 @@
             } else {
                 flag.textContent  = '🇺🇸';
                 label.textContent = 'EN';
+            }
+            // Dentro de applyLang(), al final
+            const trailerIframe = document.querySelector('.trailer iframe');
+            if (trailerIframe) {
+                trailerIframe.src = lang === 'es'
+                    ? 'https://www.youtube.com/embed/8kZWjiL5f00'
+                    : 'https://www.youtube.com/embed/uYVu6lmBs2U?si=vFDbdw73bqpyqAI-';
+                trailerIframe.title = lang === 'es'
+                    ? 'Reproductor de video de YouTube'
+                    : 'YouTube video player';
             }
         }
 
